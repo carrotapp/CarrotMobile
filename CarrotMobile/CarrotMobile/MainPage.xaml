@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:CarrotMobile"
              x:Class="CarrotMobile.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+    <Label Text="Welcome to Xamarin.Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+
 
 </ContentPage>
