@@ -15,6 +15,11 @@ namespace CarrotMobile
 		public ConfirmationOfPassword ()
 		{
 			InitializeComponent ();
-		}
-	}
+
+
+            //var tgr = new TapGestureRecognizer();
+            // tgr.Tapped += (s, e) => GoToLogin();
+            //loginLbl.GestureRecognizers.Add(tgr);
+        }
+    }
 }
