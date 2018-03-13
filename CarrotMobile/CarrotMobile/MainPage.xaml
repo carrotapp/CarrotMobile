@@ -3,10 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CarrotMobile"
              x:Class="CarrotMobile.MainPage">
+    <ScrollView>
+    <StackLayout>
+        
+        <Image Source="food.png"/>
+        
+        <Label Text="carrot" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="50"/>
 
-    <Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
 
+        <Label Text="welcome back!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="25"/>
+
+        <Entry x:Name="emailEntry"
+               Placeholder="Email"
+               Margin="50,0"/>
+
+        <Entry x:Name="passwordEntry"
+                IsPassword="true" Placeholder="Password"
+                Margin="50,0"/>
+
+        <Label x:Name="forgotPswLbl"
+               Text="forgot password?"
+               HorizontalTextAlignment="End"
+               TextColor="#489FFF"
+               Margin="0,0,50,0"/>
+
+        <Button Text="login"
+                BackgroundColor="#429DFF"
+                HeightRequest="70"
+                Margin="50,0"
+                Clicked="Login"
+             />
+
+        <Button Text="Sign In With Google"
+                BackgroundColor="#E9E9E9"
+                TextColor="Black"
+                Margin="50,0"
+                Image="gbb"
+                Clicked="GoogleSignIn"
+               />
+
+        <!--<Button.Image>     
+                <FileImageSource >gbb.png</FileImageSource>
+            </Button.Image>-->
+      
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="New Here?"/>
+            <Label x:Name="registerLbl"
+                Text="Create An Account"
+                   TextColor="#489FFF"/>
+        </StackLayout>
+
+    </StackLayout>
+    </ScrollView>
 
 </ContentPage>

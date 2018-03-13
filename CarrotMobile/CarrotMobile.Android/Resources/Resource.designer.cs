@@ -2232,10 +2232,17 @@ namespace CarrotMobile.Droid
 			public const int design_password_eye = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
+<<<<<<< HEAD
 			public const int design_snackbar_background = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
 			public const int food = 2130837596;
+=======
+			public const int food = 2130837595;
+			
+			// aapt resource value: 0x7f02005c
+			public const int gbb = 2130837596;
+>>>>>>> b39c418e5534bea97f7eb359ddc5fc7eb6baf6cf
 			
 			// aapt resource value: 0x7f02005d
 			public const int ic_audiotrack_dark = 2130837597;
