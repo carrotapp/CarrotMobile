@@ -44,9 +44,9 @@ namespace CarrotMobile
 
         private void GoToRegister()
         {
-            //Navigation.PushAsync(new RegistrationPage);
+            Navigation.PushAsync(new RegistrationPage());
 
-            DisplayAlert("Register works","This will take you to the 'Registration' page", "OK Cool.");
+            //DisplayAlert("Register works","This will take you to the 'Registration' page", "OK Cool.");
         }
 	}
 }

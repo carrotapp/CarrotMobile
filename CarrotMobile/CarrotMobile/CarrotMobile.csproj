@@ -2,7 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Carrot</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="carrot-logo.png" />
+    <None Remove="google-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="carrot-logo.png" />
+    <ApplicationDefinition Include="google-logo.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
@@ -15,5 +26,11 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="RegistrationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
