@@ -2,11 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CarrotMobile"
-             x:Class="CarrotMobile.MainPage">
+             x:Class="CarrotMobile.MainPage"
+             Title="Login">
 
-	<Label Text="Well!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-    
+    <ScrollView>
+        <StackLayout Margin="40, 10">
+        
+        <Image Source="food.png"/>
+        
+        <Label Text="carrot" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="40"
+               TextColor="Black"/>
 
+        <Label Text="welcome back!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               FontSize="20"
+               TextColor="Black"/>
+
+        <Entry x:Name="emailEntry"
+               Placeholder="Email"/>
+
+        <Entry x:Name="passwordEntry"
+               IsPassword="true"
+               Placeholder="Password"/>
+
+        <Label x:Name="forgotPswLbl"
+               Text="Forgot password?"
+               HorizontalTextAlignment="End"
+               TextColor="#489FFF"/>
+
+        <Button Text="login"
+                BackgroundColor="#429DFF"
+                HeightRequest="60"
+                Clicked="Login"
+                TextColor="White"
+             />
+
+        <Button Text="Sign In With Google"
+                BackgroundColor="#E9E9E9"
+                TextColor="Black"
+                Image="gbb"
+                Clicked="GoogleSignIn"
+               />
+
+        <!--<Button.Image>     
+                <FileImageSource >gbb.png</FileImageSource>
+            </Button.Image>-->
+      
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="New Here?"/>
+            <Label x:Name="registerLbl"
+                Text="Create an account"
+                   TextColor="#489FFF"/>
+        </StackLayout>
+
+    </StackLayout>
+    </ScrollView>
 </ContentPage>
