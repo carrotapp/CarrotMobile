@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrotMobile.RegistrationPage"
+             Title="Register">
+
+    <ScrollView>
+        <StackLayout Margin="40, 10">
+            <Image Source="carrot_logo.png"></Image>
+
+            <Label Text="carrot"
+                    Font="40"
+                    FontFamily="Source Sans Pro"
+                    TextColor="Black"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"></Label>
+
+            <Label Text="Register an account"
+                   Font="20"
+                   FontFamily="Source Sans Pro"
+                   TextColor="Black"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"></Label>
+
+            <Entry x:Name="fullNameEntry"
+                   Placeholder="Full name"></Entry>
+
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email"
+                   Keyboard="Email"></Entry>
+
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Password"
+                   IsPassword="True"></Entry>
+
+            <Button Text="Create account"
+                    BackgroundColor="#429DFF"
+                    BorderRadius="0"
+                    TextColor="White"
+                    Clicked="Register"
+                    HeightRequest="60"></Button>
+
+            <Button Image="google_logo.png"
+                    Text="Sign up with Google"
+                    BackgroundColor="#E9E9E9"
+                    BorderRadius="0"
+                    Clicked="GoogleSignUp"></Button>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand"
+                         Margin="0, 10">
+                
+                <Label Text="Already have an account?"
+                       Font="12"
+                       TextColor="Black"></Label>
+
+                <Label x:Name="logInLabel"
+                       Text="Log In"
+                       Font="12"
+                       TextColor="#429DFF"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

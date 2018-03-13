@@ -13,5 +13,9 @@ namespace CarrotMobile
 		{
 			InitializeComponent();
 		}
+
+        private void GoToRegisterPage(object sender, EventArgs e) {
+            Navigation.PushAsync(new RegistrationPage());
+        }
 	}
 }

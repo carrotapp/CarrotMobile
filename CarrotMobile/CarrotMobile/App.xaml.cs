@@ -13,7 +13,7 @@ namespace CarrotMobile
 		{
 			InitializeComponent();
 
-			MainPage = new CarrotMobile.MainPage();
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()
