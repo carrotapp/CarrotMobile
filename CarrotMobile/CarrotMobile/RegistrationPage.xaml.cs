@@ -26,11 +26,11 @@ namespace CarrotMobile
         }
 
         private void Register(object sender, EventArgs e) {
-            DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Noice!");
+            DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Nice!");
         }
 
         private void GoogleSignUp(object sender, EventArgs e) {
-            DisplayAlert("Google", "You clicked the sign up with google button but we're useless devs T_T", "Ohhhh shiiiiit!");
+            DisplayAlert("Google", "You clicked the sign up with google button", "Cool!");
         }
 
         private void GoToLogin() {

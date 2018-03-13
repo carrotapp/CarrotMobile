@@ -2,47 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CarrotMobile"
-             x:Class="CarrotMobile.MainPage">
+             x:Class="CarrotMobile.MainPage"
+             Title="Login">
+
     <ScrollView>
-    <StackLayout>
+        <StackLayout Margin="40, 10">
         
         <Image Source="food.png"/>
         
         <Label Text="carrot" 
                VerticalOptions="Center" 
                HorizontalOptions="Center"
-               FontSize="50"/>
+               FontSize="40"
+               TextColor="Black"/>
 
         <Label Text="welcome back!" 
                VerticalOptions="Center" 
                HorizontalOptions="Center"
-               FontSize="25"/>
+               FontSize="20"
+               TextColor="Black"/>
 
         <Entry x:Name="emailEntry"
-               Placeholder="Email"
-               Margin="50,0"/>
+               Placeholder="Email"/>
 
         <Entry x:Name="passwordEntry"
-                IsPassword="true" Placeholder="Password"
-                Margin="50,0"/>
+               IsPassword="true"
+               Placeholder="Password"/>
 
         <Label x:Name="forgotPswLbl"
-               Text="forgot password?"
+               Text="Forgot password?"
                HorizontalTextAlignment="End"
-               TextColor="#489FFF"
-               Margin="0,0,50,0"/>
+               TextColor="#489FFF"/>
 
         <Button Text="login"
                 BackgroundColor="#429DFF"
-                HeightRequest="70"
-                Margin="50,0"
+                HeightRequest="60"
                 Clicked="Login"
+                TextColor="White"
              />
 
         <Button Text="Sign In With Google"
                 BackgroundColor="#E9E9E9"
                 TextColor="Black"
-                Margin="50,0"
                 Image="gbb"
                 Clicked="GoogleSignIn"
                />
@@ -54,7 +55,7 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Label Text="New Here?"/>
             <Label x:Name="registerLbl"
-                Text="Create An Account"
+                Text="Create an account"
                    TextColor="#489FFF"/>
         </StackLayout>
 

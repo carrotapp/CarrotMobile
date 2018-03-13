@@ -6,7 +6,7 @@
 
     <ScrollView>
         <StackLayout Margin="40, 10">
-            <Image Source="carrot_logo.png"></Image>
+            <Image Source="food.png"></Image>
 
             <Label Text="carrot"
                     Font="40"
@@ -40,7 +40,7 @@
                     Clicked="Register"
                     HeightRequest="60"></Button>
 
-            <Button Image="google_logo.png"
+            <Button Image="gbb.png"
                     Text="Sign up with Google"
                     BackgroundColor="#E9E9E9"
                     BorderRadius="0"
