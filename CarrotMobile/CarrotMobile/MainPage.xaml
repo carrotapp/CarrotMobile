@@ -34,14 +34,14 @@
                HorizontalTextAlignment="End"
                TextColor="#489FFF"/>
 
-        <Button Text="login"
+        <Button Text="log in"
                 BackgroundColor="#429DFF"
                 HeightRequest="60"
                 Clicked="Login"
                 TextColor="White"
              />
 
-        <Button Text="Sign In With Google"
+        <Button Text="log In With Google"
                 BackgroundColor="#E9E9E9"
                 TextColor="Black"
                 Image="gbb"

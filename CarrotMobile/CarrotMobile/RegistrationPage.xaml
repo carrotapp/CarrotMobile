@@ -41,7 +41,7 @@
                     HeightRequest="60"></Button>
 
             <Button Image="gbb.png"
-                    Text="Sign up with Google"
+                    Text="register with Google"
                     BackgroundColor="#E9E9E9"
                     BorderRadius="0"
                     Clicked="GoogleSignUp"></Button>
