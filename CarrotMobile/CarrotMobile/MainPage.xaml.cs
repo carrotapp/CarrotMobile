@@ -37,9 +37,9 @@ namespace CarrotMobile
 
         private void GoToForgotPassword()
         {
-            //Navigation.PushAsync(new RegistrationPage);
+            Navigation.PushAsync(new ForgotPassword());
 
-            DisplayAlert("Forgot password works", "This will take you to the 'Forgot Password' page", "OK Cool.");
+            //DisplayAlert("Forgot password works", "This will take you to the 'Forgot Password' page", "OK Cool.");
         }
 
         private void GoToRegister()
