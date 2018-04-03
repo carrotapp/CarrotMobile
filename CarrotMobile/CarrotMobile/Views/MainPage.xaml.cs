@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarrotMobile.Services.Accounts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace CarrotMobile
 {
 	public partial class MainPage : ContentPage
 	{
+        public IAccountService AccountService = new MockAccountService();
+
 		public MainPage()
 		{
 			InitializeComponent();
@@ -25,9 +28,15 @@ namespace CarrotMobile
         
        async protected void Login(object s, EventArgs e)
         {
-            string email = emailEntry.Text;
-            string password = passwordEntry.Text;
-            await DisplayAlert("Login Works","Email: "+email +", Password: "+password + " This will log you in", "OK Cool.");
+            var loginResponse = await AccountService.Login(emailEntry.Text, passwordEntry.Text);
+            if (loginResponse.Success) {
+                await DisplayAlert("Success", loginResponse.User.Name, "Cool");
+            } else {
+                await DisplayAlert("Failed", "", "Oh no");
+            }
+            //string email = emailEntry.Text;
+            //string password = passwordEntry.Text;
+            //await DisplayAlert("Login Works","Email: "+email +", Password: "+password + " This will log you in", "OK Cool.");
         }
 
         protected void GoogleSignIn(object s, EventArgs e)
