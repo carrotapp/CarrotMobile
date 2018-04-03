@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarrotMobile.Services.Accounts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace CarrotMobile
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistrationPage : ContentPage
 	{
-		public RegistrationPage ()
+        public IAccountService AccountService = new MockAccountService();
+
+        public RegistrationPage ()
 		{
 			InitializeComponent ();
 
@@ -26,7 +29,8 @@ namespace CarrotMobile
         }
 
         private void Register(object sender, EventArgs e) {
-            DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Nice!");
+            //DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Nice!");
+            AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
         }
 
         private void GoogleSignUp(object sender, EventArgs e) {

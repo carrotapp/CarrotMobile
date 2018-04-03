@@ -30,7 +30,7 @@ namespace CarrotMobile
         {
             var loginResponse = await AccountService.Login(emailEntry.Text, passwordEntry.Text);
             if (loginResponse.Success) {
-                await DisplayAlert("Success", loginResponse.User.Name, "Cool");
+                await DisplayAlert("Success", loginResponse.User.FullName, "Cool");
             } else {
                 await DisplayAlert("Failed", "", "Oh no");
             }
