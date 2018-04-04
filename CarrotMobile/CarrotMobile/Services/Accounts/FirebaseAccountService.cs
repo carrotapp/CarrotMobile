@@ -25,7 +25,7 @@ namespace CarrotMobile.Services.Accounts
             });
         }
 
-        public bool Register(string name, string email, string password) {
+        public void Register(string name, string email, string password) {
             throw new NotImplementedException();
         }
     }
