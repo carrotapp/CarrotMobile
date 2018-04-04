@@ -30,7 +30,12 @@ namespace CarrotMobile
 
         private void Register(object sender, EventArgs e) {
             //DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Nice!");
-            AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
+            bool response = AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
+            if (response) {
+                DisplayAlert("Success!", "You've been registered successfully.", "Neat!");
+            } else {
+                DisplayAlert("Oops!", "Please make sure that all the fields are filled in and try again.", "Okay");
+            }
         }
 
         private void GoogleSignUp(object sender, EventArgs e) {

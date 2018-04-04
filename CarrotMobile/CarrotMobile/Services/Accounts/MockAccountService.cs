@@ -29,15 +29,20 @@ namespace CarrotMobile.Services.Accounts {
             //Models.DTO.User user = JsonConvert.DeserializeObject<Models.DTO.User>(text);
         }
 
-        public void Register(string name, string email, string password) {
-            var user = new Models.DTO.User() { FullName = name, Email = email, Password = password };
-            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var filePath = Path.Combine(documentsPath, "Users.json");
+        public bool Register(string name, string email, string password) {
+            if (name != null && email != null && password != null) {
+                var user = new Models.DTO.User() { FullName = name, Email = email, Password = password };
+                var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                var filePath = Path.Combine(documentsPath, "Users.json");
 
-            JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter(filePath))
-            using (JsonWriter writer = new JsonTextWriter(sw)) {
-                serializer.Serialize(writer, user);
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(filePath))
+                using (JsonWriter writer = new JsonTextWriter(sw)) {
+                    serializer.Serialize(writer, user);
+                }
+                return true;
+            } else {
+                return false;
             }
         }
     }
