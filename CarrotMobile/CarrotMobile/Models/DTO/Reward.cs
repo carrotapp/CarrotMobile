@@ -9,7 +9,7 @@ namespace CarrotMobile.Models.DTO
         public string Currency { get; set; }
         public string How { get; set; }
 
-        //   public string Image { get; set; }
+        public string Image { get; set; }
         public string InforUrl { get; set; }
 
         public string Name { get; set; }

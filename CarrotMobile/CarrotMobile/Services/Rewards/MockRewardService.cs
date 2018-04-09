@@ -16,17 +16,7 @@ namespace CarrotMobile.Services.Rewards
             {
                 Success = true,
 
-                Rewards = new Models.DTO.Reward
-                {
-                    Currency = "eb",
-                    How = "Ask FNB",
-                    InforUrl = "google",
-                    Name = "eBucks",
-                    ProviderName = "FNB",
-                    Ratio = 0,
-                    Summary = "Save",
-                    Where = "Anywhere"
-                }
+                Rewards = null
             });
         }
     }

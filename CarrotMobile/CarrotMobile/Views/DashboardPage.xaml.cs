@@ -28,7 +28,19 @@ namespace CarrotMobile.Views
             // new Models.DTO.Reward{'eb','bank','google','SmartShopper','Pick n Pay',100,'Grocery','South Africa' }
             //};
 
-            MyListView.ItemsSource = new[] { "a", "b", "c" };
+            MyListView.ItemsSource = new[] { new Reward
+                {
+                    ProviderName = "FNB",
+                    Image=""
+                },new Reward
+                {
+                    ProviderName = "Woolworths",
+                 Image=""
+                },new Reward
+                {
+                    ProviderName = "Pick n Pay",
+                 Image=""
+                } };
         }
 
         protected async void GetUserRewards()
@@ -49,7 +61,7 @@ namespace CarrotMobile.Views
             var b = (Button)sender;
             var t = b.CommandParameter;
 
-            await ((ContentPage)((ListView)((ViewCell)((StackLayout)b.Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t + " button was clicked", "OK");
+            await ((ContentPage)((ListView)((ViewCell)((Frame)((Grid)b.Parent).Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t + " button was clicked", "OK");
             // Debug.WriteLine("clicked" + t);
         }
 

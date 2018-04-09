@@ -2,65 +2,105 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CarrotMobile.Views.DashboardPage">
+
     <ListView x:Name="MyListView"
               ItemTapped="Handle_ItemTapped"
              HasUnevenRows="True"
               SeparatorVisibility="None"
             CachingStrategy="RecycleElement">
 
-        <!--<ListView.Header>
-            <StackLayout HorizontalOptions="StartAndExpand">
-                <Button Text="Add Rewards"
-                        HorizontalOptions="EndAndExpand" />
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Welcome"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                                   Text="User"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium" />
+
+                    <Button Grid.RowSpan="2" Grid.ColumnSpan="1"
+                        Text="Add Rewards"
+                        HorizontalOptions="End" />
+                </Grid>
             </StackLayout>
-        </ListView.Header>-->
-        <!--ItemsSource="{Binding Items}"-->
-
-        <!--Built in Cells-->
-        <!--<ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>-->
-
+        </ListView.Header>
         <!--Custom View Cells-->
-
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame Padding="2" Margin="0,5,0,5" MinimumHeightRequest="1000">
-                        <StackLayout Orientation="Horizontal">
-                            <StackLayout Orientation="Horizontal"  HorizontalOptions="StartAndExpand">
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
-                                <Label Text="Points Earned" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Small" />
-                                <Label Text="99999" HorizontalTextAlignment="End"  VerticalTextAlignment="Center" FontSize="Small" />
-                            </StackLayout>
+                    <Frame Padding="2"
+                           Margin="5"
+                           MinimumHeightRequest="100">
 
-                            <StackLayout HorizontalOptions="End">
-                                <Button Text=">" FontSize="Large" HorizontalOptions="Fill" CommandParameter="{Binding .}" Clicked="OnCellClicked" />
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-                    <!--<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                        <StackLayout Padding="50,0,0,0"  HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="3" Grid.Column="0"
+                                   HorizontalOptions="Start"
+                                   Source="food.png" />
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="Points Earned"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
 
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                <Label Text="Points Earned" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Small" />
-                                <Label Text="9999999999" HorizontalTextAlignment="End"  VerticalTextAlignment="Center" FontSize="Small" />
-                            </StackLayout>
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="99999"
+                                   HorizontalTextAlignment="End"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
 
-                            <BoxView HorizontalOptions="FillAndExpand"
+                            <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Fill"
                                      HeightRequest="1"
                                      BackgroundColor="Black" />
 
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                <Label Text="Rand Value" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Small" />
-                                <Label Text="R10000000" HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="Small" />
-                            </StackLayout>
-                        </StackLayout>
-                        <Button Text="Add Reward" BackgroundColor="Gray" HorizontalOptions="Fill" CommandParameter="{Binding .}" Clicked="OnCellClicked" />
-                    </StackLayout>-->
+                            <Label Grid.Row="2" Grid.Column="1"
+                                   Text="Rand Value"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
+
+                            <Label Grid.Row="2" Grid.Column="2"
+                                    Text="R10000000"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Small" />
+
+                            <Button Grid.RowSpan="3" Grid.Column="3"
+                                    Text=">"
+                                    FontSize="50"
+                                    BorderWidth="0"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="End"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnCellClicked" />
+                        </Grid>
+                    </Frame>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
