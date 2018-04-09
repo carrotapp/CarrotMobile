@@ -1,4 +1,5 @@
 ﻿using CarrotMobile.Services.Accounts;
+using CarrotMobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,13 @@ using Xamarin.Forms;
 
 namespace CarrotMobile
 {
-	public partial class MainPage : ContentPage
-	{
+    public partial class MainPage : ContentPage
+    {
         public IAccountService AccountService = new MockAccountService();
 
-		public MainPage()
-		{
-			InitializeComponent();
-
+        public MainPage()
+        {
+            InitializeComponent();
 
             var tgr = new TapGestureRecognizer();
             tgr.Tapped += (s, e) => GoToRegister();
@@ -25,13 +25,18 @@ namespace CarrotMobile
             passwordg.Tapped += (s, e) => GoToForgotPassword();
             forgotPswLbl.GestureRecognizers.Add(passwordg);
         }
-        
-       async protected void Login(object s, EventArgs e)
+
+        async protected void Login(object s, EventArgs e)
         {
             var loginResponse = await AccountService.Login(emailEntry.Text, passwordEntry.Text);
-            if (loginResponse.Success) {
+            if (loginResponse.Success)
+            {
                 await DisplayAlert("Success", loginResponse.User.Name, "Cool");
-            } else {
+
+                await Navigation.PushAsync(new DashboardPage());
+            }
+            else
+            {
                 await DisplayAlert("Failed", "", "Oh no");
             }
             //string email = emailEntry.Text;
@@ -41,7 +46,8 @@ namespace CarrotMobile
 
         protected void GoogleSignIn(object s, EventArgs e)
         {
-            DisplayAlert("Google login Works", "This will log you in with google", "OK Cool.");
+            Navigation.PushAsync(new DashboardPage());
+            //  DisplayAlert("Google login Works", "This will log you in with google", "OK Cool.");
         }
 
         private void GoToForgotPassword()
@@ -57,5 +63,5 @@ namespace CarrotMobile
 
             //DisplayAlert("Register works","This will take you to the 'Registration' page", "OK Cool.");
         }
-	}
+    }
 }
