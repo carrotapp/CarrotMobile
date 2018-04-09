@@ -3,21 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CarrotMobile
-{
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RegistrationPage : ContentPage
-	{
+namespace CarrotMobile {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RegistrationPage : ContentPage {
         public IAccountService AccountService = new MockAccountService();
 
-        public RegistrationPage ()
-		{
-			InitializeComponent ();
+        public RegistrationPage() {
+            InitializeComponent();
 
             var tgr = new TapGestureRecognizer();
             tgr.Tapped += (s, e) => GoToLogin();
@@ -29,8 +27,40 @@ namespace CarrotMobile
         }
 
         private void Register(object sender, EventArgs e) {
-            //DisplayAlert("Registering", "Your name: " + fullNameEntry.Text + "\nYour email: " + emailEntry.Text + "\nYour password is safe with us...", "Nice!");
-            AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
+            generalError.HeightRequest = 0;
+            generalError.Text = "";
+            emailError.HeightRequest = 0;
+            emailError.Text = "";
+            passwordError.HeightRequest = 0;
+            passwordError.Text = "";
+
+            var fullName = fullNameEntry.Text;
+            var email = emailEntry.Text;
+            var password = passwordEntry.Text;
+
+            if (fullName != null && email != null && password != null) {
+                Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match emailMatch = emailRegex.Match(email);
+
+                Regex passwordRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).\S{8,}$");
+                Match passwordMatch = passwordRegex.Match(password);
+                if (emailMatch.Success) {
+                    if (passwordMatch.Success) {
+                        AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
+                        DisplayAlert("Success!", "You've been registered successfully", "Neat!");
+                    } else {
+                        passwordError.HeightRequest = 60;
+                        passwordError.Text = "Password must be atleast 8 characters in length and contain atleast one uppercase, lowercase, numerical and special character.";
+                    }
+                } else {
+                    emailError.HeightRequest = 20;
+                    emailError.Text = "Not a valid email address";
+                }
+            } else {
+                generalError.HeightRequest = 20;
+                generalError.Text = "Please fill in all the fields";
+            }
+
         }
 
         private void GoogleSignUp(object sender, EventArgs e) {
@@ -40,5 +70,5 @@ namespace CarrotMobile
         private void GoToLogin() {
             Navigation.PushAsync(new MainPage());
         }
-	}
+    }
 }
