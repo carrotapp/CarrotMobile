@@ -31,15 +31,15 @@ namespace CarrotMobile.Views
             MyListView.ItemsSource = new[] { new Reward
                 {
                     ProviderName = "FNB",
-                    Image=""
+                    Image="FNB.png"
                 },new Reward
                 {
                     ProviderName = "Woolworths",
-                 Image=""
+                 Image="Woolworths.png"
                 },new Reward
                 {
-                    ProviderName = "Pick n Pay",
-                 Image=""
+                    ProviderName = "ABSA Rewards",
+                 Image="Absa.png"
                 } };
         }
 
@@ -59,9 +59,9 @@ namespace CarrotMobile.Views
         private async void OnCellClicked(object sender, EventArgs e)
         {
             var b = (Button)sender;
-            var t = b.CommandParameter;
+            var t = (Reward)b.CommandParameter;
 
-            await ((ContentPage)((ListView)((ViewCell)((Frame)((Grid)b.Parent).Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t + " button was clicked", "OK");
+            await ((ContentPage)((ListView)((ViewCell)((Frame)((Grid)b.Parent).Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t.ProviderName + " button was clicked", "OK");
             // Debug.WriteLine("clicked" + t);
         }
 

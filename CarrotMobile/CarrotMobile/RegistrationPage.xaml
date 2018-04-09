@@ -6,7 +6,9 @@
 
     <ScrollView>
         <StackLayout Margin="40, 10">
-            <Image Source="food.png"></Image>
+            <Image MinimumWidthRequest="35"
+                   HeightRequest="35"
+                Source="food.png" />
 
             <Label Text="carrot"
                     Font="40"
@@ -50,7 +52,7 @@
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="CenterAndExpand"
                          Margin="0, 10">
-                
+
                 <Label Text="Already have an account?"
                        Font="12"
                        TextColor="Black"></Label>

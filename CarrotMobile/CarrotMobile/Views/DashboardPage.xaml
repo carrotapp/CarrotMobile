@@ -10,13 +10,15 @@
             CachingStrategy="RecycleElement">
 
         <ListView.Header>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Margin="10">
                 <Grid HorizontalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
@@ -32,7 +34,9 @@
                                    VerticalTextAlignment="Center"
                                    FontSize="Medium" />
 
-                    <Button Grid.RowSpan="2" Grid.ColumnSpan="1"
+                    <Button Grid.RowSpan="2" Grid.ColumnSpan="4"
+                            TextColor="White"
+                            BackgroundColor="#FBB400"
                         Text="Add Rewards"
                         HorizontalOptions="End" />
                 </Grid>
@@ -42,7 +46,7 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <Frame Padding="2"
+                    <Frame Padding="5"
                            Margin="5"
                            MinimumHeightRequest="100">
 
@@ -60,7 +64,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.RowSpan="3" Grid.Column="0"
                                    HorizontalOptions="Start"
-                                   Source="food.png" />
+                                   Source="{Binding Image}" />
                             <Label Grid.Row="0" Grid.Column="1"
                                    Text="Points Earned"
                                    HorizontalTextAlignment="Start"
@@ -93,8 +97,9 @@
 
                             <Button Grid.RowSpan="3" Grid.Column="3"
                                     Text=">"
-                                    FontSize="50"
+                                    FontSize="Large"
                                     BorderWidth="0"
+                                    BorderColor="Transparent"
                                     BackgroundColor="Transparent"
                                     HorizontalOptions="End"
                                     CommandParameter="{Binding .}"
