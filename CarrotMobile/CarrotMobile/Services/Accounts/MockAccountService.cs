@@ -15,18 +15,26 @@ namespace CarrotMobile.Services.Accounts {
         }
 
         public Task<LoginResponse> Login(string email, string password) {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var filePath = Path.Combine(documentsPath, "Users.json");
+            string text = File.ReadAllText(filePath);
+            Models.DTO.User user = JsonConvert.DeserializeObject<Models.DTO.User>(text);
+            string loginCon = "";
+            
+            if (user.Password == password && user.Email == email)
+            {
+                loginCon = "login success";
+            }
+            else
+            {
+                loginCon = "please re-enter you login details";
+                    
+            }
             return Task.FromResult(new LoginResponse {
-                Success = true,
-                User = new Models.DTO.User {
-                    FullName = "Ernst Kaese",
-                    Email = "ernstkaese@gmail.com",
-                    Password = "password123"
-                }
-            });
-            //var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            //var filePath = Path.Combine(documentsPath, "Users.json");
-            //string text = File.ReadAllText(filePath);
-            //Models.DTO.User user = JsonConvert.DeserializeObject<Models.DTO.User>(text);
+
+      
+
+        });
         }
 
         public void Register(string name, string email, string password) {
