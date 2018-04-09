@@ -14,27 +14,38 @@ namespace CarrotMobile.Services.Accounts {
             throw new NotImplementedException();
         }
 
-        public Task<LoginResponse> Login(string email, string password) {
+        public Task<LoginResponse> Login(string email, string password)  {
+            var loginResponse = new LoginResponse();
+          var user = new Models.DTO.User() {  Email = email, Password = password };
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, "Users.json");
-            string text = File.ReadAllText(filePath);
-            Models.DTO.User user = JsonConvert.DeserializeObject<Models.DTO.User>(text);
-            string loginCon = "";
+            string details = "";
+          using (var streamReader = new StreamReader(filePath)) 
+            {
+                details = streamReader.ReadToEnd();
+            }
+            if (details != null) {
+                 user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
+                Debug.Print(details);
+                    }
             
+            //bool loginCon = false;
+
             if (user.Password == password && user.Email == email)
             {
-                loginCon = "login success";
+                Debug.Print("checking Valid:True");
+                loginResponse.Success = true;
+                loginResponse.User = user;
             }
             else
             {
-                loginCon = "please re-enter you login details";
-                    
+                Debug.Print("checking Valid:False");
+                loginResponse.Success = false;
             }
-            return Task.FromResult(new LoginResponse {
-
-      
-
-        });
+            return Task.FromResult(
+            loginResponse
+             
+            );
         }
 
         public void Register(string name, string email, string password) {
