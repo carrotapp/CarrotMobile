@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrotMobile.Views.DashboardPage">
+
+    <ListView x:Name="MyListView"
+              ItemTapped="Handle_ItemTapped"
+             HasUnevenRows="True"
+              SeparatorVisibility="None"
+            CachingStrategy="RecycleElement">
+
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal" Margin="10">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Welcome"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                                   Text="User"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium" />
+
+                    <Button Grid.RowSpan="2" Grid.ColumnSpan="4"
+                            TextColor="White"
+                            BackgroundColor="#FBB400"
+                        Text="Add Rewards"
+                        HorizontalOptions="End" />
+                </Grid>
+            </StackLayout>
+        </ListView.Header>
+        <!--Custom View Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Padding="5"
+                           Margin="5"
+                           MinimumHeightRequest="100">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="3" Grid.Column="0"
+                                   HorizontalOptions="Start"
+                                   Source="{Binding Image}" />
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="Points Earned"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
+
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="99999"
+                                   HorizontalTextAlignment="End"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
+
+                            <BoxView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Fill"
+                                     HeightRequest="1"
+                                     BackgroundColor="Black" />
+
+                            <Label Grid.Row="2" Grid.Column="1"
+                                   Text="Rand Value"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Small" />
+
+                            <Label Grid.Row="2" Grid.Column="2"
+                                    Text="R10000000"
+                                    HorizontalTextAlignment="End"
+                                    VerticalTextAlignment="Center"
+                                    FontSize="Small" />
+
+                            <Button Grid.RowSpan="3" Grid.Column="3"
+                                    Text=">"
+                                    FontSize="Large"
+                                    BorderWidth="0"
+                                    BorderColor="Transparent"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="End"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnCellClicked" />
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
