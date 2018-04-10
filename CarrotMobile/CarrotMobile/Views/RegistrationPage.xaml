@@ -30,10 +30,22 @@
             <Entry x:Name="emailEntry"
                    Placeholder="Email"
                    Keyboard="Email"></Entry>
+            <Label x:Name="emailError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
 
             <Entry x:Name="passwordEntry"
                    Placeholder="Password"
                    IsPassword="True"></Entry>
+            <Label x:Name="passwordError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
+            <Label x:Name="generalError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
 
             <Button Text="Create account"
                     BackgroundColor="#429DFF"

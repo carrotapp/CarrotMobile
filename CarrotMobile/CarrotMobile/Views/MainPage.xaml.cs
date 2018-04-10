@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -29,19 +30,41 @@ namespace CarrotMobile
         async protected void Login(object s, EventArgs e)
         {
             var loginResponse = await AccountService.Login(emailEntry.Text, passwordEntry.Text);
-            if (loginResponse.Success)
-            {
-                await DisplayAlert("Success", loginResponse.User.Name, "Cool");
 
-                await Navigation.PushAsync(new DashboardPage());
+            generalError.HeightRequest = 0;
+            generalError.Text = "";
+            emailError.HeightRequest = 0;
+            emailError.Text = "";
+
+            var email = emailEntry.Text;
+            var password = passwordEntry.Text;
+            if (password != null && email != null)
+            {
+                Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                Match emailMatch = emailRegex.Match(email);
+                if (emailMatch.Success)
+                {
+                    if (loginResponse.Success)
+                    {
+                        await DisplayAlert("You have Successfully loged in", loginResponse.User.FullName, "take me dashboard");
+                        await Navigation.PushAsync(new DashboardPage());
+                    }
+                    else
+                    {
+                        await DisplayAlert("Failed", "", "Oh no");
+                    }
+                }
+                else
+                {
+                    emailError.HeightRequest = 20;
+                    emailError.Text = "Not a valid email address";
+                }
             }
             else
             {
-                await DisplayAlert("Failed", "", "Oh no");
+                generalError.HeightRequest = 20;
+                generalError.Text = "Please fill in all the fields";
             }
-            //string email = emailEntry.Text;
-            //string password = passwordEntry.Text;
-            //await DisplayAlert("Login Works","Email: "+email +", Password: "+password + " This will log you in", "OK Cool.");
         }
 
         protected void GoogleSignIn(object s, EventArgs e)
