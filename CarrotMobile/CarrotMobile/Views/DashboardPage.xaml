@@ -38,7 +38,8 @@
                             TextColor="White"
                             BackgroundColor="#FBB400"
                         Text="Add Rewards"
-                        HorizontalOptions="End" />
+                        HorizontalOptions="End"
+                           Clicked="GoToAddRewards" />
                 </Grid>
             </StackLayout>
         </ListView.Header>
