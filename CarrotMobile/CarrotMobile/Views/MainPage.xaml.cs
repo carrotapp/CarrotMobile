@@ -25,6 +25,9 @@ namespace CarrotMobile
             var passwordg = new TapGestureRecognizer();
             passwordg.Tapped += (s, e) => GoToForgotPassword();
             forgotPswLbl.GestureRecognizers.Add(passwordg);
+
+            emailEntry.Completed += (sender, args) => { passwordEntry.Focus(); };
+            passwordEntry.Completed += (sender, args) => { Login(sender, args); };
         }
 
         async protected void Login(object s, EventArgs e)

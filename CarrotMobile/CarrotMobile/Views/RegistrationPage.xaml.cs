@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CarrotMobile.Services.Accounts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -9,10 +11,11 @@ using Xamarin.Forms.Xaml;
 
 namespace CarrotMobile
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegistrationPage : ContentPage
 	{
-		public RegistrationPage ()
+        public IAccountService AccountService = new MockAccountService();
+
+        public RegistrationPage ()
 		{
 			InitializeComponent ();
 
@@ -25,7 +28,7 @@ namespace CarrotMobile
             passwordEntry.Completed += (sender, args) => { Register(sender, args); };
         }
 
-        private void Register(object sender, EventArgs e) {
+        private async void Register(object sender, EventArgs e) {
             generalError.HeightRequest = 0;
             generalError.Text = "";
             emailError.HeightRequest = 0;
@@ -46,7 +49,8 @@ namespace CarrotMobile
                 if (emailMatch.Success) {
                     if (passwordMatch.Success) {
                         AccountService.Register(fullNameEntry.Text, emailEntry.Text, passwordEntry.Text);
-                        DisplayAlert("Success!", "You've been registered successfully", "Neat!");
+                        await DisplayAlert("Success!", "You've been registered successfully", "Neat!");
+                        await Navigation.PushAsync(new AddRewardsPage());
                     } else {
                         passwordError.HeightRequest = 60;
                         passwordError.Text = "Password must be atleast 8 characters in length and contain atleast one uppercase, lowercase, numerical and special character.";
@@ -62,8 +66,9 @@ namespace CarrotMobile
 
         }
 
-        private void GoogleSignUp(object sender, EventArgs e) {
-            DisplayAlert("Google", "You clicked the sign up with google button", "Cool!");
+        private async void GoogleSignUp(object sender, EventArgs e) {
+            await DisplayAlert("Google", "You clicked the sign up with google button", "Cool!");
+            await Navigation.PushAsync(new AddRewardsPage());
         }
 
         private void GoToLogin() {
