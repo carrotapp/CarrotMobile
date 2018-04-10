@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrotMobile.AddRewardsPage">
+    <StackLayout BackgroundColor="Gray">
+        <Button Text="Absa Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="AbsaRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="FNB e Bucks"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="FNBeBucksRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Woolworths Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="WoolworthsRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Absa Rewards"
+                BackgroundColor="White"
+                Font="40"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="FNBeBucksImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Woolworths Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"  
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="WoolworthsRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Absa Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="AbsaRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="FNB e Bucks Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="FNBeBucksRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Woolworths Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="WoolworthsRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Absa Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="AbsaRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="FNB e Bucks Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="FNBeBucksRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+        <Button Text="Woolworths Rewards"
+                BackgroundColor="White"
+                Font="40"
+                FontFamily="Source Sans Pro"
+                TextColor="Black"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="StartAndExpand" >
+            <Button.Image Source="WoolwothsRewardsImage.png">
+            </Button.Image>
+        </Button>
+
+    </StackLayout>
+</ContentPage>

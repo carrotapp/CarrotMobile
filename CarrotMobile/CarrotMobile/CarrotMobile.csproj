@@ -34,7 +34,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Update="Views\DashboardPage.xaml">
+=======
+    <EmbeddedResource Update="Views\AddRewardsPage.xaml">
+>>>>>>> 4258aaabe1d666cfde83f9dfe2a30d94d722cceb
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ForgotPassword.xaml">
