@@ -31,6 +31,7 @@ namespace CarrotMobile
             var loginResponse = await AccountService.Login(emailEntry.Text, passwordEntry.Text);
             if (loginResponse.Success) {
                 await DisplayAlert("Success", loginResponse.User.Name, "Cool");
+
             } else {
                 await DisplayAlert("Failed", "", "Oh no");
             }
@@ -57,5 +58,8 @@ namespace CarrotMobile
 
             //DisplayAlert("Register works","This will take you to the 'Registration' page", "OK Cool.");
         }
+
+
+        }
 	}
-}
+
