@@ -18,12 +18,14 @@ namespace CarrotMobile.Services.Accounts
                 Success = false,
                 User = new Models.DTO.User
                 {
-                    Name = "Ernst",
-                    Surname = "Kaese" }
+                    FullName = "Ernst Kaese",
+                    Email = "ernstkaese@gmail.com",
+                    Password = "password123"
+                }
             });
         }
 
-        public void Register() {
+        public void Register(string name, string email, string password) {
             throw new NotImplementedException();
         }
     }

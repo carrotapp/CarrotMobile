@@ -23,13 +23,28 @@
                TextColor="Black"/>
 
         <Entry x:Name="emailEntry"
-               Placeholder="Email"/>
+               Placeholder="Email"
+                Keyboard="Email"/>
 
-        <Entry x:Name="passwordEntry"
+            <Label x:Name="emailError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
+
+            <Entry x:Name="passwordEntry"
                IsPassword="true"
                Placeholder="Password"/>
 
-        <Label x:Name="forgotPswLbl"
+            <Label x:Name="passwordError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
+            <Label x:Name="generalError"
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HeightRequest="0"></Label>
+
+            <Label x:Name="forgotPswLbl"
                Text="Forgot password?"
                HorizontalTextAlignment="End"
                TextColor="#489FFF"/>

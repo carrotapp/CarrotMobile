@@ -9,7 +9,7 @@ namespace CarrotMobile.Services.Accounts
     public interface IAccountService
     {
         Task<LoginResponse> Login(string email, string password);
-        void Register();
+        void Register(string name, string email, string password);
         void ForgotPassword();
     }
 }
