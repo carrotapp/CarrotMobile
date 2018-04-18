@@ -72,7 +72,7 @@ namespace CarrotMobile
 
         protected void GoogleSignIn(object s, EventArgs e)
         {
-            Navigation.PushAsync(new DashboardPage());
+            Navigation.PushAsync(new EmptyDashboardPage());
             //  DisplayAlert("Google login Works", "This will log you in with google", "OK Cool.");
         }
 
