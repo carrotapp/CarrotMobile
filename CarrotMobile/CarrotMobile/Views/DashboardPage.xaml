@@ -8,7 +8,6 @@
              HasUnevenRows="True"
               SeparatorVisibility="None"
             CachingStrategy="RecycleElement">
-
         <ListView.Header>
             <StackLayout Orientation="Horizontal" Margin="10">
                 <Grid HorizontalOptions="FillAndExpand">
