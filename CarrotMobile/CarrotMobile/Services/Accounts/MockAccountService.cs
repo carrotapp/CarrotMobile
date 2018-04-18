@@ -1,11 +1,8 @@
 ﻿using CarrotMobile.Models.Responses;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CarrotMobile.Services.Accounts {
@@ -14,37 +11,33 @@ namespace CarrotMobile.Services.Accounts {
             throw new NotImplementedException();
         }
 
-        public Task<LoginResponse> Login(string email, string password)  {
+        public Task<LoginResponse> Login(string email, string password) {
             var loginResponse = new LoginResponse();
-          var user = new Models.DTO.User() {  Email = email, Password = password };
+            var user = new Models.DTO.User() { Email = email, Password = password };
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, "Users.json");
             string details = "";
-          using (var streamReader = new StreamReader(filePath)) 
-            {
+            using (var streamReader = new StreamReader(filePath)) {
                 details = streamReader.ReadToEnd();
             }
             if (details != null) {
-                 user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
+                user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
                 Debug.Print(details);
-                    }
-            
+            }
+
             //bool loginCon = false;
 
-            if (user.Password == password && user.Email == email)
-            {
+            if (user.Password == password && user.Email == email) {
                 Debug.Print("checking Valid:True");
                 loginResponse.Success = true;
                 loginResponse.User = user;
-            }
-            else
-            {
+            } else {
                 Debug.Print("checking Valid:False");
                 loginResponse.Success = false;
             }
             return Task.FromResult(
             loginResponse
-             
+
             );
         }
 
