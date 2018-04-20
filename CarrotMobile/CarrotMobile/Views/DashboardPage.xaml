@@ -39,7 +39,7 @@
                             BackgroundColor="#FBB400"
                         Text="Add Rewards"
                         HorizontalOptions="End"
-                           Clicked="GoToAddRewards" />
+                            x:Name="AddRewardsButton" />
                 </Grid>
             </StackLayout>
         </ListView.Header>
