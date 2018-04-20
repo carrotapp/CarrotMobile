@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using CarrotMobile;
+using CarrotMobile.CustomRenderers;
 using CarrotMobile.Droid.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

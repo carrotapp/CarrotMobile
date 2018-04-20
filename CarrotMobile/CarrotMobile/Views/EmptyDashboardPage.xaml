@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CarrotMobile.Views.EmptyDashboardPage"
-              xmlns:local="clr-namespace:CarrotMobile.CustomRenderers.;assembly=CarrotMobile.CustomRenderers"
+             xmlns:local="clr-namespace:CarrotMobile.CustomRenderers;assembly=CarrotMobile.CustomRenderers"
+             x:Class="CarrotMobile.Views.EmptyDashboardPage">
 
     <ListView x:Name="MyListView"
              HasUnevenRows="True"
@@ -10,100 +10,101 @@
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
 
-    <!--Custom View Cells-->
-    <ListView.Header>
-        <StackLayout Orientation="Horizontal" Margin="10">
-            <Grid HorizontalOptions="FillAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+        <!--Custom View Cells-->
+        <ListView.Header>
+            <StackLayout Orientation="Horizontal" Margin="10">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0"
+                    <Label Grid.Row="0" Grid.Column="0"
                            Text="Hi, Edward,"
                            FontSize="Medium" />
 
-                <Label Grid.Row="1" Grid.Column="0"
+                    <Label Grid.Row="1" Grid.Column="0"
                            Text="Add your first reward"
                            FontSize="Medium" />
 
-                <BoxView Grid.Row="2" Grid.Column="0"
+                    <BoxView Grid.Row="2" Grid.Column="0"
                                      VerticalOptions="Center"
                                      HorizontalOptions="Fill"
                                      HeightRequest="1"
                                      BackgroundColor="Black" />
 
-                <Label Grid.Row="2" Grid.Column="1"
+                    <Label Grid.Row="2" Grid.Column="1"
                            Text="OR"
                            FontSize="Large"
                            HorizontalOptions="Center"
                            VerticalOptions="Center" />
 
-                <BoxView Grid.Row="2" Grid.Column="2"
+                    <BoxView Grid.Row="2" Grid.Column="2"
                                      VerticalOptions="Center"
                                      HorizontalOptions="Fill"
 
                                      HeightRequest="1"
                                      BackgroundColor="Black" />
 
-                <Label Grid.Row="3" Grid.ColumnSpan="2"
+                    <Label Grid.Row="3" Grid.ColumnSpan="2"
                            Text="Choose one of these popular rewards"
                            FontSize="Medium" />
-                <local:CircleButton Text="+" />
-                <!--<Button Grid.RowSpan="2" Grid.Column="2"
-                           Text="+"  FontSize="Medium" WidthRequest="40" HeightRequest="40" BorderRadius="20"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand" />-->
-            </Grid>
-        </StackLayout>
-    </ListView.Header>
-    <!--Custom View Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <ViewCell>
-                <Frame Padding="5"
+
+                    <Button Grid.Row="0" Grid.Column="2"
+                            TextColor="White"
+                            BackgroundColor="#FBB400"
+                        Text="Add Rewards"
+                        HorizontalOptions="End" />
+                </Grid>
+            </StackLayout>
+        </ListView.Header>
+        <!--Custom View Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Padding="5"
                            Margin="5"
                            MinimumHeightRequest="00">
 
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="36" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="50" />
-                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="36" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
 
-                        <Image Grid.RowSpan="2 " Grid.Column="0"
+                            <Image Grid.RowSpan="2 " Grid.Column="0"
                                    HorizontalOptions="Start"
                                    Source="{Binding Image}" />
 
-                        <Label Grid.Row="0" Grid.Column="1"
+                            <Label Grid.Row="0" Grid.Column="1"
                                    Text="Absa Rewards"
                                    FontSize="Medium" />
-                        <Label Grid.Row="1" Grid.Column="1"
+                            <Label Grid.Row="1" Grid.Column="1"
                                    Text="Find out more"
                                    TextColor="#489FFF" />
 
-                        <Button Grid.RowSpan="2" Grid.Column="2"
+                            <Button Grid.RowSpan="2" Grid.Column="2"
                                 Text=">"
                                      BorderWidth="0"
                                     BorderColor="Transparent"
                                     BackgroundColor="Transparent"
                                 FontSize="Large" />
-                    </Grid>
-                </Frame>
-            </ViewCell>
-        </DataTemplate>
-    </ListView.ItemTemplate>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
     </ListView>
 </ContentPage>
