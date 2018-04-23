@@ -53,5 +53,10 @@ namespace CarrotMobile.Views
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
         }
+
+        protected async void GoToAddRewards()
+        {
+            await Navigation.PushAsync(new AddRewardsPage());
+        }
     }
 }

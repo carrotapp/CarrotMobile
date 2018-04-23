@@ -59,11 +59,10 @@
                            FontSize="Medium" />
 
                     <local:CircleButton Grid.Row="0" Grid.Column="2"
-                        Text="+"
-                        TextColor="White"
                         FontSize="Large"
                         HorizontalOptions="End"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                                         Clicked="GoToAddRewards" />
                 </Grid>
             </StackLayout>
         </ListView.Header>
@@ -102,7 +101,9 @@
                                      BorderWidth="0"
                                     BorderColor="Transparent"
                                     BackgroundColor="Transparent"
-                                FontSize="Large" />
+                                FontSize="Large"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="OnCellClicked" />
                         </Grid>
                     </Frame>
                 </ViewCell>

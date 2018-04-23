@@ -35,11 +35,8 @@
                                    FontSize="Medium" />
 
                     <local:CircleButton Grid.RowSpan="2" Grid.ColumnSpan="4"
-                            TextColor="White"
-                            BackgroundColor="#FBB400"
-                                        FontSize="Large"
-                        Text="+"
-                        HorizontalOptions="End"
+                                  FontSize="Large"
+                                  HorizontalOptions="End"
                           VerticalOptions="Center"
                            Clicked="GoToAddRewards" />
                 </Grid>

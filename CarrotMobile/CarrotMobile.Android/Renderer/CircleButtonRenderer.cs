@@ -28,14 +28,8 @@ namespace CarrotMobile.Droid.Renderer
                 button.BackgroundColor = Color.FromHex("#FBB400");
                 button.WidthRequest = 50;
                 button.HeightRequest = 50;
-
-                //GradientDrawable gradientDrawable = new GradientDrawable();
-                //gradientDrawable.SetShape(ShapeType.Rectangle);
-                //gradientDrawable.SetColor(Element.BackgroundColor.ToAndroid());
-                //gradientDrawable.SetStroke(4, Element.BorderColor.ToAndroid());
-                //gradientDrawable.SetCornerRadius(38.0f);
-
-                //Control.SetBackground(gradientDrawable);
+                button.Text = "+";
+                button.TextColor = Color.White;
             }
         }
     }
