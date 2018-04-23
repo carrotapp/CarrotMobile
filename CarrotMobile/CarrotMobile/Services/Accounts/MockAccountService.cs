@@ -42,7 +42,7 @@ namespace CarrotMobile.Services.Accounts {
         }
 
         public void Register(string name, string email, string password) {
-            var user = new Models.DTO.User() { FullName = name, Email = email, Password = password };
+            var user = new Models.DTO.User() { FullName = name, Email = email, Password = password, Rewards = new[] { "-KtW0RA8mHkt24UM9Hb8", "-KtW0ozg6YHtTuKd2OPE" } };
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, "Users.json");
 

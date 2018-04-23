@@ -9,7 +9,19 @@
     <None Remove="carrot-logo.png" />
     <None Remove="google-logo.png" />
     <None Remove="JSON\Coupons.json" />
+    <None Remove="JSON\Coupons\ABSA_coupons.json" />
+    <None Remove="JSON\Coupons\Clicks_coupons.json" />
+    <None Remove="JSON\Coupons\Coupons.json" />
+    <None Remove="JSON\Coupons\FNB_coupons.json" />
+    <None Remove="JSON\Coupons\PnP_coupons.json" />
+    <None Remove="JSON\Coupons\Woolworths_coupons.json" />
     <None Remove="JSON\Rewards.json" />
+    <None Remove="JSON\Rewards\ABSA_rewards.json" />
+    <None Remove="JSON\Rewards\Clicks_rewards.json" />
+    <None Remove="JSON\Rewards\FNB_rewards.json" />
+    <None Remove="JSON\Rewards\PnP_rewards.json" />
+    <None Remove="JSON\Rewards\Rewards.json" />
+    <None Remove="JSON\Rewards\Woolworths_rewards.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,8 +30,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="JSON\Coupons\ABSA_coupons.json" />
+    <EmbeddedResource Include="JSON\Coupons\Clicks_coupons.json" />
     <EmbeddedResource Include="JSON\Coupons.json" />
+    <EmbeddedResource Include="JSON\Coupons\FNB_coupons.json" />
+    <EmbeddedResource Include="JSON\Coupons\PnP_coupons.json" />
+    <EmbeddedResource Include="JSON\Coupons\Woolworths_coupons.json" />
+    <EmbeddedResource Include="JSON\Rewards\ABSA_rewards.json" />
+    <EmbeddedResource Include="JSON\Rewards\Clicks_rewards.json" />
+    <EmbeddedResource Include="JSON\Rewards\FNB_rewards.json" />
+    <EmbeddedResource Include="JSON\Rewards\PnP_rewards.json" />
     <EmbeddedResource Include="JSON\Rewards.json" />
+    <EmbeddedResource Include="JSON\Rewards\Woolworths_rewards.json" />
   </ItemGroup>
 
   <ItemGroup>
