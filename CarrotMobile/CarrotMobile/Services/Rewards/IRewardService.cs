@@ -2,8 +2,6 @@
 using CarrotMobile.Models.Responses;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CarrotMobile.Services.Rewards
@@ -13,5 +11,7 @@ namespace CarrotMobile.Services.Rewards
         Task<RewardResponse> GetUserRewards();
         List<Reward> GetAllRewards();
         List<Reward> FindUserRewards(List<Reward> rewards);
+        Task<AddRewardResponse> AddReward(String key);
+        Task<AddRewardResponse> RemoveReward(String key);
     }
 }
