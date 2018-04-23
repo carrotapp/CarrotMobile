@@ -13,5 +13,7 @@ namespace CarrotMobile.Models.DTO {
 
         [JsonProperty("Password")]
         public string Password { get; set; }
+
+        public string[] Rewards { get; set; }
 }
 }

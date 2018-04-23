@@ -7,6 +7,9 @@ namespace CarrotMobile.Models.DTO
 {
     public class Reward
     {
+        [JsonProperty("Key")]
+        public string Key { get; set; }
+
         [JsonProperty("Currency")]
         public string Currency { get; set; }
 

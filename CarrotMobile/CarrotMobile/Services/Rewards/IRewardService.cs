@@ -10,6 +10,8 @@ namespace CarrotMobile.Services.Rewards
 {
     public interface IRewardService
     {
-        Task<RewardResponse> GetRewards();
+        Task<RewardResponse> GetUserRewards();
+        List<Reward> GetAllRewards();
+        List<Reward> FindUserRewards(List<Reward> rewards);
     }
 }
