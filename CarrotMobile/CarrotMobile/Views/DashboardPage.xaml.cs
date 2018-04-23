@@ -41,6 +41,8 @@ namespace CarrotMobile.Views
                     ProviderName = "ABSA Rewards",
                  Image="Absa.png"
                 } };
+
+            GetUserRewards();
         }
 
         protected async void GetUserRewards()

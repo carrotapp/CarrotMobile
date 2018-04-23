@@ -8,6 +8,8 @@
   <ItemGroup>
     <None Remove="carrot-logo.png" />
     <None Remove="google-logo.png" />
+    <None Remove="JSON\Coupons.json" />
+    <None Remove="JSON\Rewards.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="JSON\Users.json" />
+    <EmbeddedResource Include="JSON\Coupons.json" />
+    <EmbeddedResource Include="JSON\Rewards.json" />
   </ItemGroup>
 
   <ItemGroup>
