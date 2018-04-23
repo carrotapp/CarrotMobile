@@ -53,10 +53,10 @@ namespace CarrotMobile.Services.Rewards {
                 details = streamReader.ReadToEnd();
             }
             if (details != null) {
-                User user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
-                String[] userRewardsKeys = user.Rewards;
+                User user = JsonConvert.DeserializeObject<User>(details);
+                List<string> userRewardsKeys = user.Rewards;
                 for (int i = 0; i < rewards.Count; i++) {
-                    for (int j = 0; j < userRewardsKeys.Length; j++) {
+                    for (int j = 0; j < userRewardsKeys.Count; j++) {
                         if (rewards[i].Key.Equals(userRewardsKeys[j])) {
                             userRewards.Add(rewards[i]);
                         }
