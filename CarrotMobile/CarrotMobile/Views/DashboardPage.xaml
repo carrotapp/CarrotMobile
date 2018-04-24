@@ -39,6 +39,7 @@
                                   HorizontalOptions="End"
                           VerticalOptions="Center"
                            Clicked="GoToAddRewards" />
+
                 </Grid>
             </StackLayout>
         </ListView.Header>

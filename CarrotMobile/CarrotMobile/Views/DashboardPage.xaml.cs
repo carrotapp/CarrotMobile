@@ -28,6 +28,10 @@ namespace CarrotMobile.Views
             //{
             // new Models.DTO.Reward{'eb','bank','google','SmartShopper','Pick n Pay',100,'Grocery','South Africa' }
             //};
+
+            //AddRewardsButton.Clicked += AddRewardsButton_Clicked;
+
+         
             GetUserRewards();
             //MyListView.ItemsSource = new[] { new Reward
             //    {
@@ -43,9 +47,15 @@ namespace CarrotMobile.Views
             //     Image="Absa.png"
             //    } };
             
+
         }
 
-        protected async void GetUserRewards()
+        private void AddRewardsButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddRewardsPage());
+        }
+
+        protected  async void GetUserRewards()
         {
             RewardResponse rewardsResponse = await RewardService.GetUserRewards();
             if (rewardsResponse.Success)
