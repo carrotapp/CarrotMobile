@@ -25,8 +25,6 @@ namespace CarrotMobile.Services.Accounts {
                 Debug.Print(details);
             }
 
-            //bool loginCon = false;
-
             if (user.Password == password && user.Email == email) {
                 Debug.Print("checking Valid:True");
                 loginResponse.Success = true;

@@ -52,7 +52,7 @@ namespace CarrotMobile.Services.Rewards {
                 details = streamReader.ReadToEnd();
             }
             if (details != null) {
-                User user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
+                User user = JsonConvert.DeserializeObject<User>(details);
                 String[] userRewardsKeys = user.Rewards;
                 for (int i=0; i<rewards.Count; i++) {
                     for(int j=0; j<userRewardsKeys.Length; j++) {

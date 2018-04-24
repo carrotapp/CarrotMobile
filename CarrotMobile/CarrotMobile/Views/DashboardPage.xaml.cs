@@ -59,12 +59,15 @@ namespace CarrotMobile.Views
             }
         }
 
-        private async void OnCellClicked(object sender, EventArgs e)
+        private void OnCellClicked(object sender, EventArgs e)
         {
             var b = (Button)sender;
-            var t = (Reward)b.CommandParameter;
+            var reward= (Reward)b.CommandParameter;
 
-            await ((ContentPage)((ListView)((ViewCell)((Frame)((Grid)b.Parent).Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t.ProviderName + " button was clicked", "OK");
+            Navigation.PushAsync(new MoreInfoPage(reward));
+
+
+            // await ((ContentPage)((ListView)((ViewCell)((Frame)((Grid)b.Parent).Parent).Parent).Parent).Parent).DisplayAlert("Clicked", t.ProviderName + " button was clicked", "OK");
             // Debug.WriteLine("clicked" + t);
         }
 
