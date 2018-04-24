@@ -1,6 +1,8 @@
-﻿using CarrotMobile.Models.Responses;
+﻿using CarrotMobile.Models.DTO;
+using CarrotMobile.Models.Responses;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,13 +15,14 @@ namespace CarrotMobile.Services.Accounts {
 
         public Task<LoginResponse> Login(string email, string password) {
             var loginResponse = new LoginResponse();
-            var user = new Models.DTO.User() { Email = email, Password = password };
+            User user = new User() { Email = email, Password = password };
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, "Users.json");
             string details = "";
             using (var streamReader = new StreamReader(filePath)) {
                 details = streamReader.ReadToEnd();
             }
+
             if (details != null) {
                 user = JsonConvert.DeserializeObject<Models.DTO.User>(details);
                 Debug.Print(details);
@@ -33,14 +36,13 @@ namespace CarrotMobile.Services.Accounts {
                 Debug.Print("checking Valid:False");
                 loginResponse.Success = false;
             }
-            return Task.FromResult(
-            loginResponse
 
-            );
+            return Task.FromResult(loginResponse);
         }
 
         public void Register(string name, string email, string password) {
-            var user = new Models.DTO.User() { FullName = name, Email = email, Password = password, Rewards = new[] { "-KtW0RA8mHkt24UM9Hb8", "-KtW0ozg6YHtTuKd2OPE" } };
+            List<string> rewards = new List<string>() { "-KtW0RA8mHkt24UM9Hb8", "-KtW0ozg6YHtTuKd2OPE" };
+            User user = new User() { FullName = name, Email = email, Password = password, Rewards = rewards };
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var filePath = Path.Combine(documentsPath, "Users.json");
 
