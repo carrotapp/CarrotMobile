@@ -7,7 +7,6 @@
                      VerticalOptions="Center">
             
             <Entry Placeholder="Card Number"
-                   Text="{Binding Card Number}"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand"
                    FontSize="Medium"
@@ -15,29 +14,27 @@
                    FontFamily="Source Sans Pro"/>
 
             <Entry Placeholder="Email Address"
-                   Text="{Binding Email Address}"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand"
                    FontSize="Medium"
                    TextColor="Black"
                    FontFamily="Source Sans Pro"/>
 
-            <Entry Placeholder="Password" 
-                   Text="{Binding Password}"
+            <Entry Placeholder="Password"
                    IsPassword="True"
                    VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"      />
+                   HorizontalOptions="CenterAndExpand"/>
 
-            <Button Text="ADD REWARDS"
+            <Button Text="ADD REWARDS"  
                     TextColor="#ffffff"
                     BackgroundColor="#429DFF"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Command="{Binding AddRewadsCommand}"  />
+                    Clicked="OnCellClicked"/>
 
             <Label  Text="CANCEL"
                     TextColor="#429DFF"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                    HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
 </ContentPage>

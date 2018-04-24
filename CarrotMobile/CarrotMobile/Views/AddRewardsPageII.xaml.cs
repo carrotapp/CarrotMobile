@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +17,18 @@ namespace CarrotMobile.Views
 		{
 			InitializeComponent ();
 		}
-	}
-}
+
+        private void AddRewardsButton_Clicked(object sender, EventArgs e)
+        {
+            Debug.Print("Clicked on Add Rewards button");
+        }
+
+        private void OnCellClicked(object sender, EventArgs e)
+        {
+            Debug.Print("Clicked on a cell");
+        }
+
+
+
+    }
+    }

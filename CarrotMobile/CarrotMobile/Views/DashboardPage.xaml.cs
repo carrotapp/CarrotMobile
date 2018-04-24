@@ -4,6 +4,7 @@ using CarrotMobile.Services.Rewards;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,21 +29,25 @@ namespace CarrotMobile.Views
             // new Models.DTO.Reward{'eb','bank','google','SmartShopper','Pick n Pay',100,'Grocery','South Africa' }
             //};
 
-            AddRewardsButton.Clicked += AddRewardsButton_Clicked;
+            //AddRewardsButton.Clicked += AddRewardsButton_Clicked;
 
-            MyListView.ItemsSource = new[] { new Reward
-                {
-                    ProviderName = "FNB",
-                    Image="FNB.png"
-                },new Reward
-                {
-                    ProviderName = "Woolworths",
-                 Image="Woolworths.png"
-                },new Reward
-                {
-                    ProviderName = "ABSA Rewards",
-                 Image="Absa.png"
-                } };
+         
+            GetUserRewards();
+            //MyListView.ItemsSource = new[] { new Reward
+            //    {
+            //        ProviderName = "FNB",
+            //        Image="FNB.png"
+            //    },new Reward
+            //    {
+            //        ProviderName = "Woolworths",
+            //     Image="Woolworths.png"
+            //    },new Reward
+            //    {
+            //        ProviderName = "ABSA Rewards",
+            //     Image="Absa.png"
+            //    } };
+            
+
         }
 
         private void AddRewardsButton_Clicked(object sender, EventArgs e)
@@ -52,10 +57,11 @@ namespace CarrotMobile.Views
 
         protected  async void GetUserRewards()
         {
-            var rewardsResponse = await RewardService.GetRewards();
+            RewardResponse rewardsResponse = await RewardService.GetUserRewards();
             if (rewardsResponse.Success)
             {
-                await DisplayAlert("Reward", rewardsResponse.Rewards + "", "OK");
+                Debug.Print(rewardsResponse.Success.ToString());
+                MyListView.ItemsSource = rewardsResponse.Rewards.ToArray();
             }
             else
             {

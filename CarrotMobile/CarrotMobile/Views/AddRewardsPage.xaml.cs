@@ -1,4 +1,6 @@
 ﻿using CarrotMobile.Models.DTO;
+using CarrotMobile.Models.Responses;
+using CarrotMobile.Services.Rewards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,29 +14,26 @@ namespace CarrotMobile
 {
     public partial class AddRewardsPage : ContentPage
     {
+
+        IRewardService RewardService = new MockRewardService();
         public AddRewardsPage()
         {
             InitializeComponent();
 
-            MyListView.ItemsSource = new[] 
-            {
-                new Reward
-                {
-                    ProviderName = "FNB",
-                    Image="FNB.png"
-                },
-                new Reward
-                {
-                   ProviderName = "Woolworths",
-                    Image="Woolworths.png"
-             },
-                new Reward
-               {
-                    ProviderName = "ABSA Rewards",
-                    Image="Absa.png"
-                }
-            };
+            GetRewards();
 
         }
+
+        private void GetRewards()
+        {
+            List<Reward> rewards = RewardService.GetAllRewards();
+            MyListView.ItemsSource = rewards.ToArray();
+
+        }
+
+        //private async void AddReward(Object sender, EventArgs e)
+        //{
+        //    await RewardResponse rewardResponse = RewardService.AddReward();
+        //}
     }
 }
