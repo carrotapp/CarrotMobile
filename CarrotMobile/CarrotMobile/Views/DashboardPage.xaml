@@ -34,20 +34,12 @@
                                    VerticalTextAlignment="Center"
                                    FontSize="Medium" />
 
-<<<<<<< HEAD
-                    <Button Grid.RowSpan="2" Grid.ColumnSpan="4"
-                            TextColor="White"
-                            BackgroundColor="#FBB400"
-                        Text="Add Rewards"
-                        HorizontalOptions="End"
-                            x:Name="AddRewardsButton" />
-=======
                     <local:CircleButton Grid.RowSpan="2" Grid.ColumnSpan="4"
                                   FontSize="Large"
                                   HorizontalOptions="End"
                           VerticalOptions="Center"
                            Clicked="GoToAddRewards" />
->>>>>>> da066e18b396806dcba2d72497c9748549477d8b
+
                 </Grid>
             </StackLayout>
         </ListView.Header>

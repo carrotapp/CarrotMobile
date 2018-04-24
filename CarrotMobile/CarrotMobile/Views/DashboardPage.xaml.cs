@@ -92,9 +92,9 @@ namespace CarrotMobile.Views
             ((ListView)sender).SelectedItem = null;
         }
 
-        //protected async void GoToAddRewards()
-        //{
-        //    await Navigation.PushAsync(new AddRewardsPage());
-        //}
+        protected async void GoToAddRewards()
+        {
+            await Navigation.PushAsync(new AddRewardsPage());
+        }
     }
 }
