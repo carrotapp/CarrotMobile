@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CarrotMobile.Views.DashboardPage">
+             x:Class="CarrotMobile.Views.DashboardPage"
+             xmlns:local="clr-namespace:CarrotMobile.CustomRenderers">
 
     <ListView x:Name="MyListView"
               ItemTapped="Handle_ItemTapped"
              HasUnevenRows="True"
               SeparatorVisibility="None"
             CachingStrategy="RecycleElement">
-
         <ListView.Header>
             <StackLayout Orientation="Horizontal" Margin="10">
                 <Grid HorizontalOptions="FillAndExpand">
@@ -34,11 +34,10 @@
                                    VerticalTextAlignment="Center"
                                    FontSize="Medium" />
 
-                    <Button Grid.RowSpan="2" Grid.ColumnSpan="4"
-                            TextColor="White"
-                            BackgroundColor="#FBB400"
-                        Text="Add Rewards"
-                        HorizontalOptions="End"
+                    <local:CircleButton Grid.RowSpan="2" Grid.ColumnSpan="4"
+                                  FontSize="Large"
+                                  HorizontalOptions="End"
+                          VerticalOptions="Center"
                            Clicked="GoToAddRewards" />
                 </Grid>
             </StackLayout>
