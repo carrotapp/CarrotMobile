@@ -5,7 +5,7 @@
              Title="{Binding ProviderName}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="bin.png" Order="Primary" Priority="1" Clicked="DeleteReward"/>
+        <ToolbarItem Icon="bin2.png" Order="Primary" Priority="1" Clicked="DeleteReward"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -19,11 +19,10 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"/>
+                <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
                 <Label Text="{Binding ProviderName}" Grid.Row="0" Grid.Column="1"
                        HorizontalOptions="Start" 
                        FontAttributes="Bold"
-                       Margin=""
                        />
 
             </Grid>

@@ -27,9 +27,18 @@ namespace CarrotMobile.Views
 
         }
 
-        private void DeleteReward()
+        protected async void DeleteReward(object sender, EventArgs e)
         {
-            
+            AddRewardResponse response = await rewardService.RemoveReward(CurrentReward.Key);
+
+            if (response.Success)
+            {
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Failure", "Could not delete reward.", "Oh my!");
+            }
         }
 
     }
