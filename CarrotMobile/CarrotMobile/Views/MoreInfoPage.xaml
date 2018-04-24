@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CarrotMobile.Views.MoreInfoPage"
+             Title="{Binding ProviderName}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="bin2.png" Order="Primary" Priority="1" Clicked="DeleteReward"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                <Image Source="{Binding Image}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+                <Label Text="{Binding ProviderName}" Grid.Row="0" Grid.Column="1"
+                       HorizontalOptions="Start" 
+                       FontAttributes="Bold"
+                       />
+
+            </Grid>
+            <Label Text="How it works"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Summary}"/>
+            <Label Text="{Binding How}"   />
+            <Label Text="Starting out" 
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding Where}"   />
+        </StackLayout>
+        </ScrollView>
+    
+</ContentPage>

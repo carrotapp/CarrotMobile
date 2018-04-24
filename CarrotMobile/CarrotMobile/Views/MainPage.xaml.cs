@@ -49,7 +49,7 @@ namespace CarrotMobile
                 {
                     if (loginResponse.Success)
                     {
-                        await DisplayAlert("You have Successfully loged in", loginResponse.User.FullName, "take me dashboard");
+                        await DisplayAlert("You have Successfully loged in", loginResponse.User.FullName, "take me to the dashboard");
                         await Navigation.PushAsync(new DashboardPage());
                     }
                     else
