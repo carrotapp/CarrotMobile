@@ -13,7 +13,7 @@ namespace CarrotMobile.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Page1 : ContentPage
 	{
-		public Page1 ()
+		public Page1 () 
 		{
 			InitializeComponent ();
 		}
@@ -27,8 +27,6 @@ namespace CarrotMobile.Views
         {
             Debug.Print("Clicked on a cell");
         }
-
-
-
+    
     }
-    }
+}
